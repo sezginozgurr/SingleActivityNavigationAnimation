@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/AFragment">
+
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.example.navigationanim.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a">
+        <action
+            android:id="@+id/action_AFragment_to_bfragment"
+            app:destination="@id/bfragment"
+            app:enterAnim="@anim/myanim_enter"
+            app:exitAnim="@anim/myanim_exit"
+            app:popEnterAnim="@anim/myanim_popenter"
+            app:popExitAnim="@anim/myanim_popexit" />
+    </fragment>
+    <dialog
+        android:id="@+id/navigation_dialog"
+        android:name="com.example.navigationanim.DialogFr"
+        tools:layout="@layout/fragment_dialog">
+
+        <action
+            android:id="@+id/action_navigation_dialog_to_CFragment"
+            app:destination="@id/CFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/bfragment"
+        android:name="com.example.navigationanim.Bfragment"
+        android:label="fragment_bfragment"
+        tools:layout="@layout/fragment_bfragment">
+        <action
+            android:id="@+id/action_bfragment_to_CFragment"
+            app:destination="@id/CFragment"
+            app:enterAnim="@anim/myanim_enter"
+            app:exitAnim="@anim/myanim_exit"
+            app:popEnterAnim="@anim/myanim_popenter"
+            app:popExitAnim="@anim/myanim_popexit" />
+        <action
+            android:id="@+id/action_bfragment_to_AFragment"
+            app:destination="@id/AFragment"
+            app:enterAnim="@anim/myanim_enter"
+            app:exitAnim="@anim/myanim_popexit" />
+    </fragment>
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.example.navigationanim.CFragment"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" />
+</navigation>
